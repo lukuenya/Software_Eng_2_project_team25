@@ -1,6 +1,6 @@
 # Project repository for the Software Engineering II Course project
 
-Please the the README files in each specific folder
+Please read the README files in each specific folder
 
 ## Project description
 
