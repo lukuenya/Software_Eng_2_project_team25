@@ -1,0 +1,837 @@
+---
+swagger: '2.0'
+info:
+  description: 'This is NineToFive API'
+  version: '1.0.0'
+  title: 'NineToFive API'
+  contact:
+    email: 'ndummatt@ece.auth.gr'
+  license:
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'ninetofive.swagger.io'
+basePath: '/v824'
+tags:
+  - name: 'user'
+    description: 'User'
+  - name: 'announcement'
+    description: 'User actions on announcements'
+  - name: 'profile'
+    description: 'User actions on profiles'
+  - name: 'request'
+    description: 'User actions on requests'
+schemes:
+  - 'https'
+paths:
+  /user:
+    post:
+      tags:
+        - 'user'
+      summary: 'Add a new user to the system.'
+      description: "FR - A  user must be able to register in the system.\n"
+      operationId: 'addUser'
+      produces:
+        - 'application/json'
+      parameters:
+        - in: 'body'
+          name: 'body'
+          description: 'Announcement object that is going to be submited.'
+          required: true
+          schema:
+            $ref: '#/definitions/body'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful Operation'
+          schema:
+            $ref: '#/definitions/inline_response_200'
+        '400':
+          description: 'Bad input parameter'
+      x-swagger-router-controller: 'User'
+  /user/{userid}/announcement:
+    get:
+      tags:
+        - 'announcement'
+      summary: 'Retrieve announcements'
+      description: "FR - A registered user must be able to view all job announcements.\n"
+      operationId: 'getListAnnouncements'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that views the announcements'
+          required: true
+          type: 'integer'
+        - name: 'title'
+          in: 'query'
+          description:
+            "A title that corresponds of the announcments, that user has\
+            \ searched"
+          required: true
+          type: 'string'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful Operation'
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/inline_response_200_1'
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Announcement not found'
+      x-swagger-router-controller: 'Announcement'
+    post:
+      tags:
+        - 'announcement'
+      summary: 'Add a new announcement to the system.'
+      description: "FR - A registered user must be able to create a new announcement.\n"
+      operationId: 'addAnnouncement'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that submits a new announcement.'
+          required: true
+          type: 'integer'
+        - in: 'body'
+          name: 'body'
+          description: 'Announcement object that is going to be submited.'
+          required: true
+          schema:
+            $ref: '#/definitions/body_1'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful Operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_2'
+      x-swagger-router-controller: 'Announcement'
+  /user/{userid}/announcement/{announcementid}:
+    put:
+      tags:
+        - 'announcement'
+      summary: 'Update announcement'
+      description: "FR - A registered user must be able to edit one of his  announcements.\n"
+      operationId: 'updateAnnouncement'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description:
+            "The userid of the user that applies an action to the existing\
+            \ announcement."
+          required: true
+          type: 'integer'
+        - name: 'announcementid'
+          in: 'path'
+          description: 'The ID of the announcement that is updated.'
+          required: true
+          type: 'integer'
+        - in: 'body'
+          name: 'body'
+          description: 'Announcement model'
+          required: true
+          schema:
+            $ref: '#/definitions/body_2'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_2'
+        '400':
+          description: 'Bad input parameter'
+        '404':
+          description: 'Announcement not found'
+      x-swagger-router-controller: 'Announcement'
+    delete:
+      tags:
+        - 'announcement'
+      summary: 'Delete Announcement'
+      description: 'This can only be done by the same user that created'
+      operationId: 'deleteAnnouncement'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The user id'
+          required: true
+          type: 'integer'
+          format: 'int64'
+        - name: 'announcementid'
+          in: 'path'
+          description: 'The user id'
+          required: true
+          type: 'integer'
+          format: 'int64'
+      security:
+        - api_key: []
+      responses:
+        '400':
+          description: 'Invalid username supplied'
+        '404':
+          description: 'Announcement not found'
+      x-swagger-router-controller: 'Announcement'
+  /user/{userid}/profile:
+    post:
+      tags:
+        - 'profile'
+      summary: 'Add a new profile to the system.'
+      description: "FR - A registered user must be able to create a new profile.\n"
+      operationId: 'addProfile'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that submits a new profile.'
+          required: true
+          type: 'integer'
+        - in: 'body'
+          name: 'body'
+          description: 'Profile object that is going to be submited.'
+          required: true
+          schema:
+            $ref: '#/definitions/body_3'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful Operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_3'
+      x-swagger-router-controller: 'Profile'
+  /user/{userid}/profile/{profileid}:
+    get:
+      tags:
+        - 'profile'
+      summary: 'View a certain profile'
+      description: "FR - A registered user must be able to view every profile.\n"
+      operationId: 'getProfile'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: "The userid of the user that view someone's profile."
+          required: true
+          type: 'integer'
+        - name: 'profileid'
+          in: 'path'
+          description: 'The ID of the profile that is beeing viewed.'
+          required: true
+          type: 'string'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'successful operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_3'
+        '404':
+          description: 'Profile not found'
+      x-swagger-router-controller: 'Profile'
+    put:
+      tags:
+        - 'profile'
+      summary: 'Update Profile'
+      description: "FR - A registered user must be able to edit his own profile.\n"
+      operationId: 'updateProfile'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that edit his profile.'
+          required: true
+          type: 'integer'
+        - name: 'profileid'
+          in: 'path'
+          description: 'The ID of the profile that is updated.'
+          required: true
+          type: 'integer'
+        - in: 'body'
+          name: 'body'
+          description: 'Profile model'
+          required: true
+          schema:
+            $ref: '#/definitions/body_4'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_3'
+        '400':
+          description: 'Bad input parameter'
+      x-swagger-router-controller: 'Profile'
+  /user/{userid}/request:
+    get:
+      tags:
+        - 'request'
+      summary: 'Retrieve requests'
+      description:
+        "FR - A registered user must be able to see his notifications(recieved\
+        \ requests).\n"
+      operationId: 'getNotificationsList'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that views his notifications.'
+          required: true
+          type: 'integer'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful operation'
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/inline_response_200_4'
+        '404':
+          description: 'Notification not found'
+      x-swagger-router-controller: 'Request'
+    post:
+      tags:
+        - 'request'
+      summary: 'Add a new request.'
+      description: "FR - A  user must be able to send request to other users.\n"
+      operationId: 'addRequest'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that edit his notifications.'
+          required: true
+          type: 'integer'
+        - in: 'body'
+          name: 'body'
+          description: 'Request object that is going to be submited.'
+          required: true
+          schema:
+            $ref: '#/definitions/body_5'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful Operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_5'
+        '400':
+          description: 'Bad input parameter'
+      x-swagger-router-controller: 'Request'
+  /user/{userid}/request/{requestid}:
+    put:
+      tags:
+        - 'request'
+      summary: 'updateNotification(response)'
+      description:
+        "FR - A registered user must be able to respond to his notifications\
+        \ (recieved requests).\n"
+      operationId: 'updateRequest'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The userid of the user that respond to the request.'
+          required: true
+          type: 'integer'
+        - name: 'requestid'
+          in: 'path'
+          description: 'The id of the request that is being responded.'
+          required: true
+          type: 'string'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'Successful operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_6'
+        '400':
+          description: 'Bad input parameter'
+        '404':
+          description: 'Request not found'
+      x-swagger-router-controller: 'Request'
+    delete:
+      tags:
+        - 'request'
+      summary: 'Delete request'
+      description:
+        "FR - The registered user must be able to delete the request that\
+        \ he has send.\nFR - The registered user must be able to delete the request\
+        \ that he has received.        \n"
+      operationId: 'delreq'
+      produces:
+        - 'application/json'
+      parameters:
+        - name: 'userid'
+          in: 'path'
+          description: 'The id of the user that delete a request.'
+          required: true
+          type: 'integer'
+        - name: 'requestid'
+          in: 'path'
+          description: 'The id of the request that is going to be deleted'
+          required: true
+          type: 'integer'
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: 'successful operation'
+          schema:
+            $ref: '#/definitions/inline_response_200_5'
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Request not found'
+      x-swagger-router-controller: 'Request'
+securityDefinitions:
+  api_key:
+    type: 'apiKey'
+    name: 'api_key'
+    in: 'header'
+definitions:
+  RequestCreation:
+    type: 'object'
+    required:
+      - 'JobTitle'
+      - 'providerUsername'
+      - 'seekerUsername'
+    properties:
+      seekerUsername:
+        type: 'string'
+      providerUsername:
+        type: 'string'
+      JobTitle:
+        type: 'string'
+  ResponseToRequest:
+    type: 'object'
+    required:
+      - 'status'
+    properties:
+      status:
+        type: 'boolean'
+  AnnouncemenConfiguration:
+    type: 'object'
+    required:
+      - 'education'
+      - 'experience'
+      - 'preview'
+      - 'salary'
+      - 'schedule'
+      - 'title'
+    properties:
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+  ProfileConfiguration:
+    type: 'object'
+    required:
+      - 'about'
+      - 'age'
+      - 'city'
+      - 'email'
+      - 'fullname'
+      - 'gender'
+    properties:
+      age:
+        type: 'string'
+      fullname:
+        type: 'string'
+      city:
+        type: 'string'
+      gender:
+        type: 'string'
+      email:
+        type: 'string'
+      about:
+        type: 'string'
+  UserCreation:
+    type: 'object'
+    required:
+      - 'password'
+      - 'username'
+    properties:
+      username:
+        type: 'string'
+      password:
+        type: 'string'
+  Profile:
+    type: 'object'
+    properties:
+      profileid:
+        type: 'integer'
+        format: 'int64'
+      age:
+        type: 'integer'
+      fullname:
+        type: 'string'
+      city:
+        type: 'string'
+      gender:
+        type: 'string'
+      email:
+        type: 'string'
+      about:
+        type: 'string'
+    xml:
+      name: 'Profile'
+  Request:
+    type: 'object'
+    properties:
+      requestid:
+        type: 'integer'
+        format: 'int64'
+      seekerid:
+        type: 'integer'
+        format: 'int64'
+      providerid:
+        type: 'integer'
+        format: 'int64'
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      status:
+        type: 'boolean'
+    xml:
+      name: 'Request'
+  User:
+    type: 'object'
+    properties:
+      userid:
+        type: 'integer'
+        format: 'int64'
+      username:
+        type: 'string'
+      password:
+        type: 'string'
+    xml:
+      name: 'User'
+  Announcement:
+    type: 'object'
+    properties:
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      userid:
+        type: 'integer'
+        format: 'int64'
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+    xml:
+      name: 'Announcement'
+  AnnouncementsList:
+    type: 'array'
+    items:
+      $ref: '#/definitions/inline_response_200_1'
+  NotificationsList:
+    type: 'array'
+    items:
+      $ref: '#/definitions/inline_response_200_4'
+  body:
+    type: 'object'
+    required:
+      - 'password'
+      - 'username'
+    properties:
+      username:
+        type: 'string'
+      password:
+        type: 'string'
+  inline_response_200:
+    type: 'object'
+    properties:
+      userid:
+        type: 'integer'
+        format: 'int64'
+      username:
+        type: 'string'
+      password:
+        type: 'string'
+    example:
+      password: 'password'
+      userid: 0
+      username: 'username'
+  inline_response_200_1:
+    type: 'object'
+    properties:
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      userid:
+        type: 'integer'
+        format: 'int64'
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+    xml:
+      name: 'Announcement'
+    example:
+      preview: 'preview'
+      schedule: 5
+      education: 'education'
+      announcementid: 0
+      title: 'title'
+      experience: 'experience'
+      salary: 1
+      userid: 6
+  body_1:
+    type: 'object'
+    required:
+      - 'education'
+      - 'experience'
+      - 'preview'
+      - 'salary'
+      - 'schedule'
+      - 'title'
+    properties:
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+  inline_response_200_2:
+    type: 'object'
+    properties:
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      userid:
+        type: 'integer'
+        format: 'int64'
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+    example:
+      preview: 'preview'
+      schedule: 5
+      education: 'education'
+      announcementid: 0
+      title: 'title'
+      experience: 'experience'
+      salary: 1
+      userid: 6
+  body_2:
+    type: 'object'
+    required:
+      - 'education'
+      - 'experience'
+      - 'preview'
+      - 'salary'
+      - 'schedule'
+      - 'title'
+    properties:
+      title:
+        type: 'string'
+      experience:
+        type: 'string'
+      education:
+        type: 'string'
+      preview:
+        type: 'string'
+      salary:
+        type: 'integer'
+      schedule:
+        type: 'integer'
+  body_3:
+    type: 'object'
+    required:
+      - 'about'
+      - 'age'
+      - 'city'
+      - 'email'
+      - 'fullname'
+      - 'gender'
+    properties:
+      age:
+        type: 'string'
+      fullname:
+        type: 'string'
+      city:
+        type: 'string'
+      gender:
+        type: 'string'
+      email:
+        type: 'string'
+      about:
+        type: 'string'
+  inline_response_200_3:
+    type: 'object'
+    properties:
+      profileid:
+        type: 'integer'
+        format: 'int64'
+      age:
+        type: 'integer'
+      fullname:
+        type: 'string'
+      city:
+        type: 'string'
+      gender:
+        type: 'string'
+      email:
+        type: 'string'
+      about:
+        type: 'string'
+    example:
+      gender: 'gender'
+      city: 'city'
+      profileid: 0
+      about: 'about'
+      fullname: 'fullname'
+      age: 6
+      email: 'email'
+  body_4:
+    type: 'object'
+    required:
+      - 'about'
+      - 'age'
+      - 'city'
+      - 'email'
+      - 'fullname'
+      - 'gender'
+    properties:
+      age:
+        type: 'string'
+      fullname:
+        type: 'string'
+      city:
+        type: 'string'
+      gender:
+        type: 'string'
+      email:
+        type: 'string'
+      about:
+        type: 'string'
+  inline_response_200_4:
+    type: 'object'
+    properties:
+      requestid:
+        type: 'integer'
+        format: 'int64'
+      seekerid:
+        type: 'integer'
+        format: 'int64'
+      providerid:
+        type: 'integer'
+        format: 'int64'
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      status:
+        type: 'boolean'
+    xml:
+      name: 'Request'
+    example:
+      requestid: 0
+      providerid: 1
+      announcementid: 5
+      seekerid: 6
+      status: true
+  body_5:
+    type: 'object'
+    required:
+      - 'JobTitle'
+      - 'providerUsername'
+      - 'seekerUsername'
+    properties:
+      seekerUsername:
+        type: 'string'
+      providerUsername:
+        type: 'string'
+      JobTitle:
+        type: 'string'
+  inline_response_200_5:
+    type: 'object'
+    properties:
+      requestid:
+        type: 'integer'
+        format: 'int64'
+      seekerid:
+        type: 'integer'
+        format: 'int64'
+      providerid:
+        type: 'integer'
+        format: 'int64'
+      announcementid:
+        type: 'integer'
+        format: 'int64'
+      status:
+        type: 'boolean'
+    example:
+      requestid: 0
+      providerid: 1
+      announcementid: 5
+      seekerid: 6
+      status: true
+  inline_response_200_6:
+    type: 'object'
+    required:
+      - 'status'
+    properties:
+      status:
+        type: 'boolean'
+    example:
+      status: true
