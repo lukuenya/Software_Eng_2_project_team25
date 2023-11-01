@@ -1,1 +1,8 @@
-# Software_Eng_2_project_team25
+# Project repository for the Software Engineering II Course project
+
+## Project description
+
+
+## Collaborators
+
+
