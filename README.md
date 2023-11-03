@@ -1,9 +1,7 @@
-
 # Project repository for the Software Engineering II Course project
 
 #### Project Name : NineToFive
 #### Description : 
-
 
 ## Collaborators
 
