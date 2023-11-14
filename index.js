@@ -35,6 +35,14 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
+  // Handle root URL ("/")
+  app.use('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.writeHead(200);
+    res.end('Welcome to the NineToFive App !! Please visit /docs for the API documentation');
+  });
+
+
   // Start the server
   http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
