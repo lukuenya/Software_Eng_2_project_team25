@@ -2,12 +2,17 @@
 
 var fs = require('fs'),
     path = require('path'),
-    http = require('http');
+    http = require('http'),
+    finalhandler = require('finalhandler'),
+    serveStatic = require('serve-static');
 
 var app = require('connect')();
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = process.env.PORT || 8080;
+
+// Serve static files
+var serve = serveStatic(__dirname);
 
 // swaggerRouter configuration
 var options = {
@@ -37,16 +42,25 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Handle root URL ("/")
   app.use('/', function(req, res) {
-    res.setHeader('Content-Type', 'text/plain');
-    res.writeHead(200);
-    res.end('Welcome to the NineToFive App !! Please visit /docs for the API documentation');
-  });
+    if (req.url === '/' || req.url === '/index.html') {
+      fs.readFile(__dirname + '/index.html', function(err, data) {
+        if (err) {
+          res.writeHead(500);
+          return res.end('Error loading index.html');
+        }
 
+        res.writeHead(200);
+        res.end(data);
+      });
+    } else {
+      // Use serve-static for other static files like CSS, JS, images etc.
+      serve(req, res, finalhandler(req, res));
+    }
+  });
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
     console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
   });
-
 });
