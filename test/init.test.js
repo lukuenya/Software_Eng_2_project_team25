@@ -1,20 +1,16 @@
 const test = require('ava');
 
-// First test
-test('Random test', t => {
-    t.pass();
-    });
+const {getListAnnouncements} = require('../service/AnnouncementService.js');
 
-const addnumber = (a, b) => a + b;
 
-test('Add two numbers', t => {
-    t.is(addnumber(1, 2), 3);
-    t.is(addnumber(-10, 4), -6);
-    t.is(addnumber(0, 0), 0);
-    t.is(addnumber(0.8, 0.2), 1);
-    });  
+test('Async', async t => {
+    const res = Promise.resolve('unicorn');
+    t.is(await res, 'unicorn');
+})
 
-test('Async test', async t => {
-    const p = Promise.resolve('Tested');// Promise by default is resolved
-    t.is(await p, 'Tested');
+test('getListAnnouncements', t =>{
+    const result = getListAnnouncements(3);
+    console.log(result);
+
 });
+
