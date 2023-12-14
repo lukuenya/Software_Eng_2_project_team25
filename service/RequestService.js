@@ -53,7 +53,9 @@ exports.delreq = function(userid,requestid) {
 exports.getNotificationsList = function(userid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {};
+    examples['application/json'] = {
+      "description": "we have a job for you"
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
