@@ -59,8 +59,17 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   });
 
   // Start the server
-  http.createServer(app).listen(serverPort, function () {
-    console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-    console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
-  });
+  if (process.env.NODE_ENV !== 'test') {
+    http.createServer(app).listen(serverPort, function () {
+      console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
+      console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
+    });
+  }
+  
+  
+  module.exports = app; // Exporting for testing
+
+
+
 });
+
