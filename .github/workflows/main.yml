@@ -32,7 +32,7 @@ jobs:
         run: npm i -g @railway/cli
 
       - name: Deploy to Railway
-        run: railway up --service 82bc2290-fbfa-47c4-9260-5dcbd384f6c0
+        run: railway up --service e04bc5c0-d7be-42eb-86d6-16b4d810b75f
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
   

@@ -48,7 +48,17 @@ exports.deleteAnnouncement = function(userid,announcementid) {
 exports.getListAnnouncements = function(userid,title) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {};
+    examples['application/json'] = {
+      "title" : "Titlos",
+      "description" : "Software Engineering II",
+      "salary" : 1000,
+      "location" : "Kinshasa",
+      "category" : "IT",
+      "company" : "Luluasoft",
+      "userid" : 1,
+      "announcementid" : 1,
+      "empty" : false
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -70,7 +80,17 @@ exports.getListAnnouncements = function(userid,title) {
 exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {
+      "title" : "Titlos 2",
+      "description" : "Software Engineering II",
+      "salary" : 1000,
+      "location" : "Kinshasa",
+      "category" : "IT",
+      "company" : "Luluasoft",
+      "userid" : 1,
+      "announcementid" : 1,
+      "empty" : false
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
