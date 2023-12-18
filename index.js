@@ -66,7 +66,6 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     });
   }
   
-  
   module.exports = app; // Exporting for testing
 
 
