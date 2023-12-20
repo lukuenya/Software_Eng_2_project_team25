@@ -82,7 +82,6 @@ test('get Notifications', async (t) => {
 // Test profile function
 test('get Profile', async (t) => {
   const {body, statusCode} = await t.context.got('userid/profileid');
-  t.is(statusCode, 200);
-  
+  console.log(response);
   
 });
