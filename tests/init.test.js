@@ -81,7 +81,7 @@ test('Get Notifications', async (t) => {
 
 // Test profile function
 test('get Profile', async (t) => {
-  const {responseType} = await t.context.got('profileid/0');
+  const {response} = await t.context.got('profileid/0');
   console.log(response);
   
 });
