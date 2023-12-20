@@ -1,7 +1,7 @@
 'use strict';
 
 var utils = require('../utils/writer.js');
-var User = require('../service/UserService');
+var User = require('../service/UserService.js');
 
 module.exports.addUser = function addUser (req, res, next) {
   var body = req.swagger.params['body'].value;
@@ -12,4 +12,5 @@ module.exports.addUser = function addUser (req, res, next) {
     .catch(function (response) {
       utils.writeJson(res, response);
     });
+    res.json({ message: 'User created successfully' });
 };
