@@ -72,7 +72,7 @@ test('Get Notifications', async t => {
   t.is(result[0].userid , 0);
 });
 
-test('get Notifications', async (t) => {
+test('Get Notifications', async (t) => {
   const {body, statusCode} = await t.context.got('userid/0/request');
   //check response
   t.assert(body.success);
