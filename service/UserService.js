@@ -11,7 +11,10 @@
 exports.addUser = function(body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = [{
+      "userid" : 1,
+      "username" : "username",
+      "password" : "password",}];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {

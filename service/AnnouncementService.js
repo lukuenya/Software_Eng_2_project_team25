@@ -67,7 +67,7 @@ exports.getListAnnouncements = function(userid,title) {
  * body Body_2 Announcement model
  * returns inline_response_200_2
  **/
-exports.updateAnnouncement = function(userid,announcementid,body) {
+/*exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {"empty": false};
@@ -76,6 +76,14 @@ exports.updateAnnouncement = function(userid,announcementid,body) {
     } else {
       resolve();
     }
+  });
+} */
+exports.updateAnnouncement = function(userid,announcementid,body) {
+  return new Promise(function(resolve, reject) {
+    
+    
+      resolve();
+    
   });
 }
 
