@@ -5,9 +5,8 @@ const listen = require('test-listen');
 const got = require('got');
 const app = require('../index');
 
-const { addUser } = require('../service/UserService.js');
+const UserService = require('../service/UserService');
 
-const baseUrl = 'http://localhost:8080/';
 
 test.before(async (t) => {
     t.context.server = http.createServer(app);
@@ -19,30 +18,40 @@ test.after.always((t) => {
     t.context.server.close();
 });
 
-// Test case for adding a new user
-test('POST /user - Add new user', async t => {
-    const newUser = {
-        username: "testuser",
-        password: "password",
-        userid: 1,
-    };
+const mockuser = {
+    userid: 3,
+    username: "testuser",
+    password: "testpassword"
+};
+
+// Test cases for user creation(Post /user)
+test('POST /user Add New User return success with required fields', async (t) => {
+    t.timeout(50000);
+    const newUserID = 15;
+    mockuser.userid = newUserID;
 
     try {
-        const response = await t.context.got.post(`user`, {
-            json: newUser,
-            responseType: 'json',
-            throwHttpErrors: false
+        const {body, statusCode} = await t.context.got.post(`user/`, {
+            json: mockuser,
         });
-
-        // Check the status code
-        t.is(response.statusCode, 200, 'Response should be 200 OK');
-
-        // Check if the response body has expected properties
-        t.is(response.body.username, newUser.username, 'Username should match');
-        t.is(response.body.email, newUser.email, 'Email should match');
-
-        // Add more assertions as needed to validate the response
+        // Assertions
+        console.log(body);
+        t.is(statusCode, 200, 'Should return 200');
+        t.is(body.userid, newUserID);
+        t.is(body.username, mockuser.username);
+        t.is(body.password, mockuser.password);
     } catch (error) {
         t.fail(`Request failed: ${error.message}`);
     }
 });
+
+
+// Test cases for user creation(Post /user)
+test('Add User', async t => {
+    try {
+      await UserService.addUser(mockuser);
+      t.pass();
+    } catch (error) {
+      t.fail(`Promise was rejected with: ${error.message}`);
+    }
+  });

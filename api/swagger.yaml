@@ -9,8 +9,8 @@ info:
   license:
     name: 'Apache 2.0'
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: 'ninetofive.swagger.io'
-basePath: '/v824'
+host: "localhost:8080"
+basePath: '/api'
 tags:
   - name: 'user'
     description: 'User'
@@ -21,7 +21,7 @@ tags:
   - name: 'request'
     description: 'User actions on requests'
 schemes:
-  - 'https'
+  - 'http'
 paths:
   /user:
     post:
