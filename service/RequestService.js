@@ -12,7 +12,7 @@
 exports.addRequest = function(userid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -20,6 +20,24 @@ exports.addRequest = function(userid,body) {
     }
   });
 }
+// exports.addRequest = function(userid, body) {
+//   return new Promise(function(resolve, reject) {
+//     // Basic validation
+//     if (!userid || !body || !body.seekerUsername || !body.providerUsername || !body.JobTitle) {
+//       reject({ error: "Missing required fields" });
+//     } else {
+//       // Simulating a response that echoes back the input data
+//       resolve({
+//         seekerUsername: body.seekerUsername,
+//         providerUsername: body.providerUsername,
+//         JobTitle: body.JobTitle,
+//         userid: userid
+//       });
+//     }
+//   });
+// };
+
+
 
 
 /**
@@ -33,7 +51,7 @@ exports.addRequest = function(userid,body) {
 exports.delreq = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -54,7 +72,11 @@ exports.getNotificationsList = function(userid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "description": "we have a job for you"
+      "requestid": 134,
+      "providerid": 20,
+      "announcementid": 5,
+      "seekerid": 6,
+      "status": true
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -76,7 +98,7 @@ exports.getNotificationsList = function(userid) {
 exports.updateRequest = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {

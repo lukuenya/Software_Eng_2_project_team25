@@ -12,7 +12,14 @@
 exports.addAnnouncement = function(userid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {
+      "title": "Titlos",
+      "experience": "2 years",
+      "education": "MSc",
+      "preview": "Preview",
+      "salary": 1000,
+      "schedule": 8
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -49,15 +56,12 @@ exports.getListAnnouncements = function(userid,title) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "title" : "Titlos",
-      "description" : "Software Engineering II",
-      "salary" : 1000,
-      "location" : "Kinshasa",
-      "category" : "IT",
-      "company" : "Luluasoft",
-      "userid" : 1,
-      "announcementid" : 1,
-      "empty" : false
+      "title": "Titlos",
+      "experience": "2 years",
+      "education": "MSc",
+      "preview": "Preview",
+      "salary": 1000,
+      "schedule": 8
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -81,15 +85,12 @@ exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-      "title" : "Titlos 2",
-      "description" : "Software Engineering II",
-      "salary" : 1000,
-      "location" : "Kinshasa",
-      "category" : "IT",
-      "company" : "Luluasoft",
-      "userid" : 1,
-      "announcementid" : 1,
-      "empty" : false
+      "title": "Titlos",
+      "experience": "2 years",
+      "education": "MSc",
+      "preview": "Preview",
+      "salary": 1000,
+      "schedule": 8
     };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);

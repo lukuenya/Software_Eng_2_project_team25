@@ -3,9 +3,9 @@ const http = require('http');
 const test = require('ava');
 const listen = require('test-listen');
 const got = require('got');
-const app = require('../index');
+const app = require('../index.js');
 
-const UserService = require('../service/UserService');
+const {addUser} = require('../service/UserService');
 
 
 test.before(async (t) => {
@@ -19,39 +19,69 @@ test.after.always((t) => {
 });
 
 const mockuser = {
-    userid: 3,
     username: "testuser",
     password: "testpassword"
 };
 
-// Test cases for user creation(Post /user)
-test('POST /user Add New User return success with required fields', async (t) => {
-    t.timeout(50000);
-    const newUserID = 15;
-    mockuser.userid = newUserID;
 
+test ("Post Add User function returns user object", async (t) => {
+    const mockuser = {
+        username: "testuser1",
+        password: "testpassword1"
+    };
+
+    const user = await addUser(mockuser);
+    t.truthy(user.username);
+    t.truthy(user.password);
+});
+
+
+// Test Missing username
+test("addUser returns error when username is missing", async (t) => {
+    const mockuser = { password: "testpassword" };
     try {
-        const {body, statusCode} = await t.context.got.post(`user/`, {
-            json: mockuser,
-        });
-        // Assertions
-        console.log(body);
-        t.is(statusCode, 200, 'Should return 200');
-        t.is(body.userid, newUserID);
-        t.is(body.username, mockuser.username);
-        t.is(body.password, mockuser.password);
+        await addUser(mockuser);
+        t.fail("Expected an error to be thrown");
     } catch (error) {
-        t.fail(`Request failed: ${error.message}`);
+        t.truthy(error);
     }
 });
 
 
-// Test cases for user creation(Post /user)
-test('Add User', async t => {
+// Test Missing password
+test("addUser returns error when password is missing", async (t) => {
+    const mockuser = { username: "testuser" };
     try {
-      await UserService.addUser(mockuser);
-      t.pass();
+        await addUser(mockuser);
+        t.fail("Expected an error to be thrown");
     } catch (error) {
-      t.fail(`Promise was rejected with: ${error.message}`);
+        t.truthy(error);
     }
-  });
+});
+
+
+// Test Missing username and password
+test("addUser returns error with empty input", async (t) => {
+    const mockuser = {};
+    try {
+        await addUser(mockuser);
+        t.fail("Expected an error to be thrown");
+    } catch (error) {
+        t.truthy(error);
+    }
+});
+
+
+// Test with invalid schema (additional property)
+test("addUser returns error with invalid input structure", async (t) => {
+    const mockuser = { invalidField: "invalid" };
+    try {
+        await addUser(mockuser);
+        t.fail("Expected an error to be thrown");
+    } catch (error) {
+        t.truthy(error);
+    }
+});
+
+
+
