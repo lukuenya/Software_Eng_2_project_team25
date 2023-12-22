@@ -11,10 +11,10 @@ var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = process.env.PORT || 8080;
 
-var cors = require('cors');
-app.use(cors({
-  origin: 'http://localhost:8080'
-}));
+// var cors = require('cors');
+// app.use(cors({
+//   origin: 'http://localhost:8080'
+// }));
 
 // Serve static files
 var serve = serveStatic(__dirname);
