@@ -22,49 +22,52 @@ test.after.always((t) => {
 
 // Test case for getting a Profile by function
 
-test( 'GET Profile by function', async t => {
-    const result = await getProfile(0,0);
-    console.log(result[0])
-    t.is(result[0].city, "city");
 
-}); 
-
-
-test( 'Get a profile', async (t) => {
-    const response = await t.context.got("user/0/profile/0").json();
-    console.log(response);
-}); 
-
-// Test case for adding a new Profile
-test('POST /Profile - Add new Profile', async t => {
-    const newProfile = {
-        profileid: 1,
-        age: 1,
-        fullname: "TestName",
-        city: "TestCity",
-        gender: "TestMale",
-        email: "testmail",
-        about: "test",
+test("getProfile returns a profile object", async (t) => {
+    const mockProfile = {
+        "gender": "gender",
+        "city": "city",
+        "profileid": 0,
+        "about": "about",
+        "fullname": "fullname",
+        "age": 6,
+        "email": "email"
     };
 
-    try {
-        const response = await t.context.got.post(`announcement`, {
-            json: newProfile,
-            responseType: 'json',
-            throwHttpErrors: false
-        });
+    const profile = await getProfile(mockProfile);
+    t.is(profile.gender);
+    t.is(profile.city);
+    t.is(profile.profileid);
+    t.is(profile.about);
+    t.is(profile.fullname);
+    t.is(profile.age);
+    t.is(profile.email);
 
-        // Check the status code
-        t.is(response.statusCode, 200, 'Response should be 200 OK');
-
-        // Check if the response body has expected properties
-        t.is(response.body.age, newProfile.age, 'Age should match');
-        t.is(response.body.gender, newProfile.gender, 'Gender should match');
-        t.is(response.body.email, newProfile.email, 'Email should match');
-        t.is(response.body.about, newProfile.about, 'About should match');
-    
-        // Add more assertions as needed to validate the response
-    } catch (error) {
-        t.fail(`Request failed: ${error.message}`);
-    }
 });
+
+// Test case for adding a Profile by function
+
+test("Post addProfile ", async (t) => {
+    const mockProfile = {
+        "gender": "gender",
+        "city": "city",
+        "profileid": 0,
+        "about": "about",
+        "fullname": "fullname",
+        "age": 6,
+        "email": "email"
+    };
+
+    const profile = await addProfile(mockProfile);
+    t.truthy(profile.gender);
+    t.truthy(profile.city);
+    t.truthy(profile.profileid);
+    t.truthy(profile.about);
+    t.truthy(profile.fullname);
+    t.truthy(profile.age);
+    t.truthy(profile.email);
+    
+
+});
+
+

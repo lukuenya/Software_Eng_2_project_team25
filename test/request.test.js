@@ -27,19 +27,21 @@ test.after.always((t) => {
 });
 
 
-test("Post Add Request function returns request object", async (t) => {
-    const mockrequest = {
-        seekerUsername: "Matt",
-        providerUsername: "LuluaSoft",
+test("addRequest successfully adds a request", async (t) => {
+    const userid = 1;
+    const mockRequest = {
+        seekerUsername: "UserA",
+        providerUsername: "UserB",
         JobTitle: "Software Engineer"
     };
 
-    const request = await addRequest(mockrequest);
+    const request = await addRequest(userid, mockRequest);
     t.truthy(request.seekerUsername);
     t.truthy(request.providerUsername);
     t.truthy(request.JobTitle);
-}
-);
+});
+
+    
 
 test("PUT Update Request function returns request object", async (t) => {
     const mockrequest = {

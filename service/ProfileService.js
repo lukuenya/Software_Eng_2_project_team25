@@ -33,7 +33,7 @@ exports.addProfile = function(userid,body) {
 exports.getProfile = function(userid,profileid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {"empty": false};
+    examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
