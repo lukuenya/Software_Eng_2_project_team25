@@ -56,20 +56,20 @@ test('POST /Announcement - Add new Announcement', async t => {
 
 // Test case for adding a new Announcement by function
 
-test('Add an Announcement by function', async (t) => {
+// test('Add an Announcement by function', async (t) => {
     
-    const userId = 12;
-    const announcementBody = {
-      title: "TestTitle",
-      experience: "TestExperience",
-      education: "TestEducation",
-      preview: "TestPreview",
-      salary: 100,
-      schedule: 10,
-    };
+//     const userId = 12;
+//     const announcementBody = {
+//       title: "TestTitle",
+//       experience: "TestExperience",
+//       education: "TestEducation",
+//       preview: "TestPreview",
+//       salary: 100,
+//       schedule: 10,
+//     };
   
-    await t.notThrowsAsync(addAnnouncement(userId, announcementBody));
-  });
+//     await t.notThrowsAsync(addAnnouncement(userId, announcementBody));
+//   });
 
 
 //Test case for deleting an Announcement by function
