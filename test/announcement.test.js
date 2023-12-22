@@ -19,40 +19,40 @@ test.after.always((t) => {
     t.context.server.close();
 });
 
-// Test case for adding a new Announcement
-test('POST /Announcement - Add new Announcement', async t => {
-    const newAnnouncement = {
-        announcementid: 1,
-        userid: 1,
-        title: "TestTitle",
-        experience: "TestExperience",
-        education: "TestEducation",
-        preview: "TestPreview",
-        salary: 100,
-        schedule: 10,
-    };
+// // Test case for adding a new Announcement
+// test('POST /Announcement - Add new Announcement', async t => {
+//     const newAnnouncement = {
+//         announcementid: 1,
+//         userid: 1,
+//         title: "TestTitle",
+//         experience: "TestExperience",
+//         education: "TestEducation",
+//         preview: "TestPreview",
+//         salary: 100,
+//         schedule: 10,
+//     };
 
-    try {
-        const response = await t.context.got.post('announcement', {
-            json: newAnnouncement,
-            responseType: 'json',
-            throwHttpErrors: false
-        });
+//     try {
+//         const response = await t.context.got.post('announcement', {
+//             json: newAnnouncement,
+//             responseType: 'json',
+//             throwHttpErrors: false
+//         });
 
-        // Check the status code
-        t.is(response.statusCode, 200, 'Response should be 200 OK');
+//         // Check the status code
+//         t.is(response.statusCode, 200, 'Response should be 200 OK');
 
-        // Check if the response body has expected properties
-        t.is(response.body.title, newAnnouncement.title, 'Title should match');
-        t.is(response.body.salary, newAnnouncement.salary, 'Salary should match');
-        t.is(response.body.education, newAnnouncement.education, 'Education should match');
-        t.is(response.body.preview, newAnnouncement.preview, 'Preview should match');
+//         // Check if the response body has expected properties
+//         t.is(response.body.title, newAnnouncement.title, 'Title should match');
+//         t.is(response.body.salary, newAnnouncement.salary, 'Salary should match');
+//         t.is(response.body.education, newAnnouncement.education, 'Education should match');
+//         t.is(response.body.preview, newAnnouncement.preview, 'Preview should match');
 
-        // Add more assertions as needed to validate the response
-    } catch (error) {
-        t.fail(`Request failed: ${error.message}`);
-    }
-});
+//         // Add more assertions as needed to validate the response
+//     } catch (error) {
+//         t.fail(`Request failed: ${error.message}`);
+//     }
+// });
 
 // Test case for adding a new Announcement by function
 

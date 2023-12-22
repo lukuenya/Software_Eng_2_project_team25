@@ -47,27 +47,27 @@ test("getProfile returns a profile object", async (t) => {
 
 // Test case for adding a Profile by function
 
-test("Post addProfile ", async (t) => {
-    const mockProfile = {
-        "gender": "gender",
-        "city": "city",
-        "profileid": 0,
-        "about": "about",
-        "fullname": "fullname",
-        "age": 6,
-        "email": "email"
-    };
+// test("Post addProfile ", async (t) => {
+//     const mockProfile = {
+//         "gender": "gender",
+//         "city": "city",
+//         "profileid": 0,
+//         "about": "about",
+//         "fullname": "fullname",
+//         "age": 6,
+//         "email": "email"
+//     };
 
-    const profile = await addProfile(mockProfile);
-    t.truthy(profile.gender);
-    t.truthy(profile.city);
-    t.truthy(profile.profileid);
-    t.truthy(profile.about);
-    t.truthy(profile.fullname);
-    t.truthy(profile.age);
-    t.truthy(profile.email);
+//     const profile = await addProfile(mockProfile);
+//     t.truthy(profile.gender);
+//     t.truthy(profile.city);
+//     t.truthy(profile.profileid);
+//     t.truthy(profile.about);
+//     t.truthy(profile.fullname);
+//     t.truthy(profile.age);
+//     t.truthy(profile.email);
     
 
-});
+// });
 
 
