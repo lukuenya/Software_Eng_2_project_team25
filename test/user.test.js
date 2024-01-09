@@ -11,7 +11,7 @@ const {addUser} = require('../service/UserService');
 test.before(async (t) => {
     t.context.server = http.createServer(app);
     t.context.prefixUrl = await listen(t.context.server);
-    t.context.got = got.extend({ prefixUrl: t.context.prefixUrl, responseType: "json"});
+    t.context.got = got.extend({prefixUrl: t.context.prefixUrl, responseType: "json"});
 });
 
 test.after.always((t) => {
@@ -26,8 +26,8 @@ const mockuser = {
 
 test ("Post Add User function returns user object", async (t) => {
     const mockuser = {
-        username: "testuser1",
-        password: "testpassword1"
+        "username": "testuser",
+        "password": "testpassword"
     };
 
     const user = await addUser(mockuser);

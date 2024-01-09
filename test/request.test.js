@@ -26,29 +26,25 @@ test.after.always((t) => {
     t.context.server.close();
 });
 
-const mockrequest = {
-    "seekerUsername": "Matt",
-    "providerUsername": "LuluaSoft",
-    "JobTitle": "Software Engineer"
-};
 
-test("Post Add Request function returns request object", async (t) => {
-    const mockrequest = {
-        "seekerUsername": "Matt",
-        "providerUsername": "LuluaSoft",
-        "JobTitle": "Software Engineer"
+test("addRequest successfully adds a request", async (t) => {
+    const userid = 1;
+    const mockRequest = {
+        seekerUsername: "UserA",
+        providerUsername: "UserB",
+        JobTitle: "Software Engineer"
     };
 
-    const request = await addRequest(mockrequest);
-    t.is(request.seekerUsername);
-    t.is(request.providerUsername);
-    t.is(request.JobTitle);
-}
-);
+    const request = await addRequest(userid, mockRequest);
+    t.truthy(request.seekerUsername);
+    t.truthy(request.providerUsername);
+    t.truthy(request.JobTitle);
+});
+
+    
 
 test("PUT Update Request function returns request object", async (t) => {
     const mockrequest = {
-        "userid": 1,
         "seekerUsername": "Jhon",
         "providerUsername": "LuluaSoft1",
         "JobTitle": "Software Engineer1"
@@ -58,6 +54,50 @@ test("PUT Update Request function returns request object", async (t) => {
     t.is(request.seekerUsername);
     t.is(request.providerUsername);
     t.is(request.JobTitle);
-    t.is(request.userid);
 
 });
+
+test("addRequest returns error when required fields are missing", async (t) => {
+    const userid = 1;
+    const mockRequest = { seekerUsername: "UserA" }; // Missing providerUsername and JobTitle
+
+    try {
+        await RequestService.addRequest(userid, mockRequest);
+        t.fail("Expected an error to be thrown");
+    } catch (error) {
+        t.truthy(error);
+    }
+});
+
+test("Get retrieves notifications for a user", async (t) => {
+    const userid = 1;
+
+    const notifications = await getNotificationsList(userid);
+    t.truthy(notifications.requestid);
+    t.truthy(notifications.providerid);
+});
+
+test("delreq deletes a request", async (t) => {
+    const userid = 1;
+    const requestid = 101;
+
+    // resolves without any specific return 
+    await t.notThrowsAsync(async () => {
+        await delreq(userid, requestid);
+    });
+});
+
+// test("delreq throws error when requestid is missing", async (t) => {
+//     const userid = 1;
+
+//     try {
+//         await delreq(userid);
+//         t.fail("Expected an error to be thrown");
+//     } catch (error) {
+//         t.truthy(error);
+//     }
+// });
+
+
+
+
