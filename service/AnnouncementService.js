@@ -13,9 +13,7 @@ exports.addAnnouncement = function(userid,body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !body) {
       reject("Error 200, user id or body is not given");    //if userid or body is not given
-    } else {
-     resolve("Addition successful");    //if both parameters are given
-    }
+    } else 
     var examples = {};
     examples['application/json'] = {"empty": false};
     if (Object.keys(examples).length > 0) {
@@ -40,7 +38,6 @@ exports.deleteAnnouncement = function(userid,announcementid) {
     if (!userid || !announcementid) {
       reject("Error 200, User id or Announcement id is not given");   //if userid or announcementid is not given
     } else {
-
       resolve("Deletion successful");   //if both parameters are given
     }
   });
@@ -59,9 +56,7 @@ exports.getListAnnouncements = function(userid,title) {
   return new Promise(function(resolve, reject) {
     if (!userid || !title) {
       reject("Error 200, User id or Title is not given");   //if userid or title is not given
-    } else {
-      resolve("Announcement got successful");   //if both parameters are given
-    }
+    } else 
     var examples = {};
     examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
@@ -86,9 +81,7 @@ exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !announcementid || !body) {
       reject("Error 200, User id, Announcement id or body is not given");   //if userid, announcementid or body is not given
-    } else {
-      resolve("Announcement updated successful");   //if all parameters are given
-    }
+    } else 
     var examples = {};
     examples['application/json'] = {"empty": false};
     if (Object.keys(examples).length > 0) {

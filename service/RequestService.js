@@ -13,9 +13,7 @@ exports.addRequest = function(userid,body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !body) {
       reject("Error 200, user id or body is not given");    //if userid or body is not given
-    } else {
-     resolve("Addition successful");    //if both parameters are given
-    }
+    } else 
     var examples = {};
     examples['application/json'] = {"empty": false};
     if (Object.keys(examples).length > 0) {
