@@ -11,6 +11,11 @@
  **/
 exports.addProfile = function(userid,body) {
   return new Promise(function(resolve, reject) {
+    if (!userid || !body) {
+      reject("Error 200, user id or body is not given");    //if userid or body is not given
+    } else {
+     resolve("Addition successful");    //if both parameters are given
+    }
     var examples = {};
     examples['application/json'] = {"empty": false};
     if (Object.keys(examples).length > 0) {
@@ -32,6 +37,11 @@ exports.addProfile = function(userid,body) {
  **/
 exports.getProfile = function(userid,profileid) {
   return new Promise(function(resolve, reject) {
+    if (!userid || !profileid) {
+      reject("Error 200, user id or profile id is not given");    //if userid or profileid is not given
+    } else {
+     resolve("Profile got successful");    //if both parameters are given
+    }
     var examples = {};
     examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
@@ -54,6 +64,11 @@ exports.getProfile = function(userid,profileid) {
  **/
 exports.updateProfile = function(userid,profileid,body) {
   return new Promise(function(resolve, reject) {
+    if (!userid || !profileid || !body) {
+      reject("Error 200, user id, profile id or body is not given");   //if userid, profileid or body is not given
+    } else {
+      resolve("Profile updated successful");   //if all parameters are given
+    }
     var examples = {};
     examples['application/json'] = {"empty": false};
     if (Object.keys(examples).length > 0) {

@@ -110,9 +110,15 @@
 
 exports.addRequest = function(userid, body) {
   return new Promise(function(resolve, reject) {
-    
-    if (!userid || !body || !body.seekerUsername || !body.providerUsername || !body.JobTitle) {
-      reject({ error: "Missing required fields" });
+    if (!userid || !body) {
+      reject("Error 200, user id or body is not given");    //if userid or body is not given
+    } else {
+     resolve("Addition successful");    //if both parameters are given
+    }
+    var examples = {};
+    examples['application/json'] = {"empty": false};
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
     } else {
       // Simulating a response that echoes back the input data
       resolve({
@@ -137,6 +143,11 @@ exports.addRequest = function(userid, body) {
  **/
 exports.delreq = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
+    if (!userid || !requestid) {
+      reject("Error 200, User id or Request id is not given");   //if userid or requestid is not given
+    } else {
+      resolve("Deletion successful");   //if both parameters are given
+    }
     var examples = {};
     examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
@@ -157,6 +168,11 @@ exports.delreq = function(userid,requestid) {
  **/
 exports.getNotificationsList = function(userid) {
   return new Promise(function(resolve, reject) {
+    if (!userid) {
+      reject("Error 200, User id is not given");   //if userid is not given
+    } else {
+      resolve("Notification got successful");   //if parameter is given
+    }
     var examples = {};
     examples['application/json'] = {
       "requestid": 134,
@@ -184,6 +200,11 @@ exports.getNotificationsList = function(userid) {
  **/
 exports.updateRequest = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
+    if (!userid || !requestid) {
+      reject("Error 200, User id or Request id is not given");   //if userid or requestid is not given
+    } else {
+      resolve("Request updated successful");   //if both parameters are given
+    }
     var examples = {};
     examples['application/json'] = {};
     if (Object.keys(examples).length > 0) {
