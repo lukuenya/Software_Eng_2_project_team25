@@ -10,6 +10,11 @@
  **/
 exports.addUser = function(body) {
   return new Promise(function(resolve, reject) {
+    if (!body) {
+      reject("Error 200, body is not given");   //if body is not given
+    } else {
+      resolve("User added successful");   //if parameter is given
+    }
     var examples = {};
     examples['application/json'] = [{
       "userid" : 1,
