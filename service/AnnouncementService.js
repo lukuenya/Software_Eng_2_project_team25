@@ -68,15 +68,7 @@ exports.getListAnnouncements = function(userid,title) {
 }
 
 
-/**
- * Update announcement
- * FR - A registered user must be able to edit one of his  announcements. 
- *
- * userid Integer The userid of the user that applies an action to the existing announcement.
- * announcementid Integer The ID of the announcement that is updated.
- * body Body_2 Announcement model
- * returns inline_response_200_2
- **/
+// Function to update an announcement
 exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
