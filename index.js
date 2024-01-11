@@ -1,18 +1,19 @@
-var fs = require('fs'),
-    path = require('path'),
-    http = require('http'),
-    finalhandler = require('finalhandler'),
-    serveStatic = require('serve-static');
+// Core Node.js module
+var fs = require('fs');
+var path = require('path');
+var http = require('http');
 
+// Middlware and server setup
+var finalhandler = require('finalhandler');
+var serveStatic = require('serve-static');
 var app = require('connect')();
+
+// Swagger and YAML tools
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
-var serverPort = process.env.PORT || 8080;
 
-// var cors = require('cors');
-// app.use(cors({
-//   origin: 'http://localhost:8080'
-// }));
+// Server configuration
+var serverPort = process.env.PORT || 8080;
 
 // Serve static files
 var serve = serveStatic(__dirname);
