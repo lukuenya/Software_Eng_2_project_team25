@@ -1,9 +1,10 @@
 'use strict';
-
+// Import required modules
 var utils = require('../utils/writer.js');
 var Profile = require('../service/ProfileService');
 
 module.exports.addProfile = function addProfile (req, res, next) {
+  // Extract userid and body from request parameters
   var userid = req.swagger.params['userid'].value;
   var body = req.swagger.params['body'].value;
   Profile.addProfile(userid,body)
@@ -16,6 +17,7 @@ module.exports.addProfile = function addProfile (req, res, next) {
 };
 
 module.exports.getProfile = function getProfile (req, res, next) {
+  // Extract userid and profileid from request parameters
   var userid = req.swagger.params['userid'].value;
   var profileid = req.swagger.params['profileid'].value;
   Profile.getProfile(userid,profileid)
@@ -28,6 +30,7 @@ module.exports.getProfile = function getProfile (req, res, next) {
 };
 
 module.exports.updateProfile = function updateProfile (req, res, next) {
+  // Extract userid, profileid, and body from request parameters
   var userid = req.swagger.params['userid'].value;
   var profileid = req.swagger.params['profileid'].value;
   var body = req.swagger.params['body'].value;
