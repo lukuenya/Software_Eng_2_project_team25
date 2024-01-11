@@ -9,20 +9,16 @@
  * body Body_1 Announcement object that is going to be submited.
  * returns inline_response_200_2
  **/
-exports.addAnnouncement = function(userid,body) {
+exports.addAnnouncement = function(userid, body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !body) {
-      reject("Error 200, user id or body is not given");    //if userid or body is not given
-    } else 
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      reject("Error 200, user id or body is not given");    //if userid or body is not given 
     } else {
-      resolve();
+      resolve("Announcement added successful");   //Parameters are given correctly by user
     }
   });
-}
+};
+
 
 
 /**
@@ -36,9 +32,9 @@ exports.addAnnouncement = function(userid,body) {
 exports.deleteAnnouncement = function(userid,announcementid) {
   return new Promise(function(resolve, reject) {
     if (!userid || !announcementid) {
-      reject("Error 200, User id or Announcement id is not given");   //if userid or announcementid is not given
+      reject("Error 200, user id or announcement id is not given");   //If userid or announcementid is not given
     } else {
-      resolve("Deletion successful");   //if both parameters are given
+      resolve("Deletion successful");   //Parameters are given correctly by user
     }
   });
 };
@@ -52,20 +48,26 @@ exports.deleteAnnouncement = function(userid,announcementid) {
  * title String A title that corresponds of the announcments, that user has searched
  * returns List
  **/
-exports.getListAnnouncements = function(userid,title) {
+exports.getListAnnouncements = function(userid, title) {
   return new Promise(function(resolve, reject) {
     if (!userid || !title) {
-      reject("Error 200, User id or Title is not given");   //if userid or title is not given
-    } else 
-    var examples = {};
-    examples['application/json'] = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      reject("Error 200, user id or title is not given");   //If parameters are not given correctly by user
     } else {
-      resolve();
+      var example = {
+        "title": "Titlos",
+        "experience": "2 years",
+        "education": "MSc",
+        "preview": "Preview",
+        "salary": 1000,
+        "schedule": 8
+      };
+    
+      resolve(example);
     }
   });
-}
+};
+
+
 
 
 /**
@@ -77,18 +79,23 @@ exports.getListAnnouncements = function(userid,title) {
  * body Body_2 Announcement model
  * returns inline_response_200_2
  **/
-exports.updateAnnouncement = function(userid,announcementid,body) {
+exports.updateAnnouncement = function(userid, announcementid, body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !announcementid || !body) {
-      reject("Error 200, User id, Announcement id or body is not given");   //if userid, announcementid or body is not given
-    } else 
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      reject("Error 200, user id, announcement id, or body is not given");    //If parameters are not given correctly by user
     } else {
-      resolve();
+      var example = {
+        "title": "Titlos",
+        "experience": "2 years",
+        "education": "MSc",
+        "preview": "Preview",
+        "salary": 1000,
+        "schedule": 8
+      };
+      
+      resolve("Announcement updated successful");   //Parameters are given correctly by user
     }
   });
-} 
+};
+
 
