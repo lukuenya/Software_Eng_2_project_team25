@@ -54,12 +54,12 @@ exports.getListAnnouncements = function(userid, title) {
       reject("Error 200, user id or title is not given");   //If parameters are not given correctly by user
     } else {
       var example = {
-        "title": "Titlos",
-        "experience": "2 years",
-        "education": "MSc",
+        "title": "Title",
+        "experience": "1 year",
+        "education": "BSc",
         "preview": "Preview",
         "salary": 1000,
-        "schedule": 8
+        "schedule": 5
       };
     
       resolve(example);
@@ -82,20 +82,21 @@ exports.getListAnnouncements = function(userid, title) {
 exports.updateAnnouncement = function(userid, announcementid, body) {
   return new Promise(function(resolve, reject) {
     if (!userid || !announcementid || !body) {
-      reject("Error 200, user id, announcement id, or body is not given");    //If parameters are not given correctly by user
+      reject("Error 200, user id, announcement id, or body is not given"); // If parameters are not given correctly by user
     } else {
       var example = {
-        "title": "Titlos",
-        "experience": "2 years",
+        "title": "Title",
+        "experience": "3 years",
         "education": "MSc",
         "preview": "Preview",
-        "salary": 1000,
-        "schedule": 8
+        "salary": 1500,
+        "schedule": 6
       };
-      
-      resolve("Announcement updated successful");   //Parameters are given correctly by user
+
+      resolve("Announcement updated successful. New Announcement:", example); // Parameters are given correctly by user
     }
   });
 };
+
 
 
