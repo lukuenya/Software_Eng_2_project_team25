@@ -1,17 +1,18 @@
 'use strict';
 
-// Import required modules
-var utils = require('../utils/writer.js');
-var User = require('../service/UserService');
+// Import utility functions for writing responses
+var responseUtils = require('../utils/writer.js');
+var userService = require('../service/UserService');
 
-module.exports.addUser = function addUser (req, res, next) {
-   // Extract user information from the request body
-  var body = req.swagger.params['body'].value;
-  User.addUser(body)
-    .then(function (response) {
-      utils.writeJson(res, response);
+// Function to add a user
+module.exports.addUser = function addUser(req, res, next) {
+  var userDetails = req.swagger.params['body'].value;
+
+  userService.addUser(userDetails) // Call the service function
+    .then(function (userResponse) {
+      responseUtils.writeJson(res, userResponse); // Write the response
     })
-    .catch(function (response) {
-      utils.writeJson(res, response);
+    .catch(function (errorResponse) {
+      responseUtils.writeJson(res, errorResponse); // Write the error response
     });
 };
