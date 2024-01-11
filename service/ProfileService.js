@@ -41,8 +41,8 @@ exports.getProfile = function(userid,profileid) {
     if (!userid || !profileid) {
       reject("Error 200, user id or profile id is not given");    //if userid or profileid is not given by user
     } else 
-    var examples = {};
-    examples['application/json'] = [{
+    var example = {};
+    example['application/json'] = [{
       "profileid" : 0,
       "age" : 13,
       "fullname" : "fullname",
