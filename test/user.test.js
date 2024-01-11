@@ -5,25 +5,27 @@ const listen = require('test-listen');
 const got = require('got');
 const app = require('../index.js');
 
+// Import the service functions
 const {addUser} = require('../service/UserService');
 
-
+// Start the server and create a prefixUrl
 test.before(async (t) => {
     t.context.server = http.createServer(app);
     t.context.prefixUrl = await listen(t.context.server);
     t.context.got = got.extend({prefixUrl: t.context.prefixUrl, responseType: "json"});
 });
 
+// Close the server after each test
 test.after.always((t) => {
     t.context.server.close();
 });
-
+ // Test with valid input
 const mockuser = {
     username: "testuser",
     password: "testpassword"
 };
 
-
+// Test Add User and return user object
 test ("Post Add User function returns user object", async (t) => {
     const mockuser = {
         "username": "testuser",
