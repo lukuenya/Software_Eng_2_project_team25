@@ -1,8 +1,10 @@
 'use strict';
 
+// Import utility functions for writing responses
 var utils = require('../utils/writer.js');
 var Request = require('../service/RequestService');
 
+// Function to add a Request
 module.exports.addRequest = function addRequest (req, res, next) {
   var userid = req.swagger.params['userid'].value;
   var body = req.swagger.params['body'].value;
@@ -15,6 +17,7 @@ module.exports.addRequest = function addRequest (req, res, next) {
     });
 };
 
+// Function to delete a Request
 module.exports.delreq = function delreq (req, res, next) {
   var userid = req.swagger.params['userid'].value;
   var requestid = req.swagger.params['requestid'].value;
@@ -27,6 +30,7 @@ module.exports.delreq = function delreq (req, res, next) {
     });
 };
 
+// Function to get a Notification List
 module.exports.getNotificationsList = function getNotificationsList (req, res, next) {
   var userid = req.swagger.params['userid'].value;
   Request.getNotificationsList(userid)
@@ -38,6 +42,7 @@ module.exports.getNotificationsList = function getNotificationsList (req, res, n
     });
 };
 
+// Function to update a Request
 module.exports.updateRequest = function updateRequest (req, res, next) {
   var userid = req.swagger.params['userid'].value;
   var requestid = req.swagger.params['requestid'].value;
