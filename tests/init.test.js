@@ -4,7 +4,7 @@ const listen = require('test-listen');
 const got = require('got');
 const app = require('../index.js');
 
-// Import specific functions from services
+// Import functions from services
 const { addUser } = require('../service/UserService.js');
 const { getNotificationsList } = require('../service/RequestService.js');
 const { getProfile } = require('../service/ProfileService.js');
