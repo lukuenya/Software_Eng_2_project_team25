@@ -12,7 +12,6 @@ exports.addUser = function(userBody) {
   return new Promise(function(resolve, reject) {
     var responseExamples = {};
     responseExamples['application/json'] = {"empty": false};
-
     if (Object.keys(responseExamples).length > 0) {
       resolve(responseExamples[Object.keys(responseExamples)[0]]);
     } else {
