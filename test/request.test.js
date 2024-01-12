@@ -13,6 +13,7 @@ const listen = require('test-listen');
 const got = require('got');
 const app = require('../index.js');
 
+// Import functions from RequestService
 const {addRequest, delreq, updateRequest, getNotificationsList} = require('../service/RequestService.js');
 
 
@@ -26,7 +27,7 @@ test.after.always((t) => {
     t.context.server.close();
 });
 
-
+// Test case for successful addition of a request
 test("addRequest successfully adds a request", async (t) => {
     const userid = 1;
     const mockRequest = {
@@ -42,7 +43,7 @@ test("addRequest successfully adds a request", async (t) => {
 });
 
     
-
+// Test case for PUT Update Request function
 test("PUT Update Request function returns request object", async (t) => {
     const mockrequest = {
         "seekerUsername": "Jhon",
@@ -59,7 +60,7 @@ test("PUT Update Request function returns request object", async (t) => {
 
 test("addRequest returns error when required fields are missing", async (t) => {
     const userid = 1;
-    const mockRequest = { seekerUsername: "UserA" }; // Missing providerUsername and JobTitle
+    const mockRequest = { seekerUsername: "UserA" }; // Missing provider Username and JobTitle
 
     try {
         await RequestService.addRequest(userid, mockRequest);
@@ -71,7 +72,8 @@ test("addRequest returns error when required fields are missing", async (t) => {
 
 test("Get retrieves notifications for a user", async (t) => {
     const userid = 1;
-
+    
+    // Call getNotificationsList and validate the response
     const notifications = await getNotificationsList(userid);
     t.truthy(notifications.requestid);
     t.truthy(notifications.providerid);
