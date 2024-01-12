@@ -9,18 +9,17 @@
  * body Body_3 Profile object that is going to be submited.
  * returns inline_response_200_3
  **/
-exports.addProfile = function(userid,body) {
+exports.addProfile = function(submittingUserId, profileBody) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    var responseExamples = {};
+    responseExamples['application/json'] = {"empty": false};
+    if (Object.keys(responseExamples).length > 0) {
+      resolve(responseExamples[Object.keys(responseExamples)[0]]);
     } else {
       resolve();
     }
   });
-}
-
+};
 
 /**
  * View a certain profile
@@ -30,17 +29,17 @@ exports.addProfile = function(userid,body) {
  * profileid String The ID of the profile that is beeing viewed.
  * returns inline_response_200_3
  **/
-exports.getProfile = function(userid,profileid) {
+exports.getProfile = function(viewingUserId, targetProfileId) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    var responseExamples = {};
+    responseExamples['application/json'] = {"empty": false};
+    if (Object.keys(responseExamples).length > 0) {
+      resolve(responseExamples[Object.keys(responseExamples)[0]]);
     } else {
       resolve();
     }
   });
-}
+};
 
 
 /**
@@ -52,15 +51,15 @@ exports.getProfile = function(userid,profileid) {
  * body Body_4 Profile model
  * returns inline_response_200_3
  **/
-exports.updateProfile = function(userid,profileid,body) {
+exports.updateProfile = function(editingUserId, targetProfileId, updatedProfile) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    var responseExamples = {};
+    responseExamples['application/json'] = {"empty": false};
+    if (Object.keys(responseExamples).length > 0) {
+      resolve(responseExamples[Object.keys(responseExamples)[0]]);
     } else {
       resolve();
     }
   });
-}
+};
 
