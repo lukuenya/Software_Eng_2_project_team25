@@ -30,9 +30,11 @@ var writeJson = exports.writeJson = function (response, arg1, arg2) {
   var payload = setResponseBody(arg1, arg2);
 
   if (typeof payload === 'object') {
+    // Convert payload to JSON format with indentation
     payload = JSON.stringify(payload, null, 2);
   }
 
+  // Set HTTP headers and end the response
   response.writeHead(code, { 'Content-Type': 'application/json' });
   response.end(payload);
 };
