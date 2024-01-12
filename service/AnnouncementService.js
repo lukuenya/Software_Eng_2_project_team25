@@ -14,7 +14,7 @@ exports.addAnnouncement = function(userid, body) {
     if (!userid || !body) {
       reject("Error 200, user id or body is not given");    //if userid or body is not given 
     } else {
-      resolve("Announcement added successful");    //Parameters are given correctly by user
+      resolve("Announcement added successful");     //Parameters are given correctly by user
     }
   });
 };
