@@ -25,7 +25,7 @@ var setResponseBody = function (arg1, arg2) {
   }
 };
 
-var writeJson = exports.writeJson = function (response, arg1, arg2) {
+exports.writeJson = function (response, arg1, arg2) {
   var code = setResponseCode(arg1, arg2);
   var payload = setResponseBody(arg1, arg2);
 
