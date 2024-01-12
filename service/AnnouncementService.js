@@ -13,6 +13,7 @@ exports.addAnnouncement = function(userid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {"empty": false};
+    // Check if examples exist and resolve with the appropriate response
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -49,6 +50,7 @@ exports.getListAnnouncements = function(userid,title) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {};
+    // Check if examples exist and resolve with the appropriate response
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -67,10 +69,13 @@ exports.getListAnnouncements = function(userid,title) {
  * body Body_2 Announcement model
  * returns inline_response_200_2
  **/
+
+// Function to update an announcement
 exports.updateAnnouncement = function(userid,announcementid,body) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {"empty": false};
+    // Check if examples exist and resolve with the appropriate response
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
