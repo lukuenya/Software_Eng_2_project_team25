@@ -137,12 +137,11 @@ exports.addRequest = function(userid, body) {
  **/
 exports.delreq = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
+    if (!userid || !requestid) {
+      reject("Error 200, user id or request id is not given");   //if userid or requestid is not given
+    }
+    else {
+      resolve("Request deleted successful");    //Parameters are given correctly by user
     }
   });
 }
@@ -157,18 +156,19 @@ exports.delreq = function(userid,requestid) {
  **/
 exports.getNotificationsList = function(userid) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "requestid": 134,
-      "providerid": 20,
-      "announcementid": 5,
-      "seekerid": 6,
+    if (!userid) {
+      reject("Error 200, user id is not given");   //if userid is not given
+    }
+    else {
+      var example = {};
+    example['application/json'] = {
+      "requestid": 11,
+      "providerid": 11,
+      "announcementid": 8,
+      "seekerid": 5,
       "status": true
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
+      resolve(example);
     }
   });
 }
@@ -184,12 +184,11 @@ exports.getNotificationsList = function(userid) {
  **/
 exports.updateRequest = function(userid,requestid) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
+    if (!userid || !requestid) {
+      reject("Error 200, user id or request id is not given");   //if userid or requestid is not given by user
+    } 
+    else {
+      resolve("Request updated successful");    //Parameters are given correctly by user
     }
   });
 }

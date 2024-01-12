@@ -503,6 +503,14 @@ definitions:
         type: 'string'
     xml:
       name: 'Profile'
+    example:
+      gender: 'gender'
+      city: 'city'
+      profileid: 0
+      about: 'about'
+      fullname: 'fullname'
+      age: 6
+      email: 'email'
   Request:
     type: 'object'
     properties:
@@ -534,6 +542,10 @@ definitions:
         type: 'string'
     xml:
       name: 'User'
+    example:
+      userid: 0
+      username: 'username'
+      password: 'password'
   Announcement:
     type: 'object'
     properties:

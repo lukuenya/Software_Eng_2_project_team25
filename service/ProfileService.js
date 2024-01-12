@@ -9,17 +9,23 @@
  * body Body_3 Profile object that is going to be submited.
  * returns inline_response_200_3
  **/
-exports.addProfile = function(userid,body) {
+exports.addProfile = function(userid, body) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    if (!userid || !body) {
+      reject("Error 200, user id or body is not given");    //if userid or profileid is not given by user
     } else {
-      resolve();
+      resolve({
+        "age": "20",
+        "fullname": "John Doe",
+        "city": "Thessaloniki",
+        "gender": "Male",
+        "email": "JohnDoe123456@gmail.com",
+        "about": "I am a software engineer",
+      });
     }
   });
-}
+};
+
 
 
 /**
@@ -32,13 +38,21 @@ exports.addProfile = function(userid,body) {
  **/
 exports.getProfile = function(userid,profileid) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
+    if (!userid || !profileid) {
+      reject("Error 200, user id or profile id is not given");    //if userid or profileid is not given by user
+    } else 
+    var example = {};
+    example['application/json'] = [{
+      "profileid" : 0,
+      "age" : 13,
+      "fullname" : "fullname",
+      "city" : "city",
+      "gender" : "gender",
+      "email" : "email",
+      "about" : "about",
+  } ];
+      resolve(example);
+    
   });
 }
 
@@ -54,12 +68,11 @@ exports.getProfile = function(userid,profileid) {
  **/
 exports.updateProfile = function(userid,profileid,body) {
   return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {"empty": false};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
+    if (!userid || !profileid || !body) {
+      reject("Error 200, user id, profile id or body is not given");   //if userid, profileid or body is not given by user
+    } 
+    else {
+      resolve("Profile updated successful");  //Parameters are given correctly by user
     }
   });
 }

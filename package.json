@@ -21,9 +21,10 @@
     "swagger-tools": "0.10.1"
   },
   "devDependencies": {
-    "ava": "^6.0.0",
+    "ava": "^6.0.1",
     "c8": "^8.0.1",
     "got": "^11.8.3",
+    "http": "^0.0.1-security",
     "test-listen": "^1.1.0"
   }
 }
