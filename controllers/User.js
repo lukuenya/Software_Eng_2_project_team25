@@ -6,7 +6,9 @@ var userService = require('../service/UserService');
 
 // Function to add a user
 module.exports.addUser = function addUser(req, res, next) {
-  userService.addUser(req.swagger.params['body'].value) // Call the service function
+  var userDetails = req.swagger.params['body'].value;
+
+  userService.addUser(userDetails) // Call the service function
     .then(function (userResponse) {
       responseUtils.writeJson(res, userResponse); // Write the response
     })
