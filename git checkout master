@@ -1,0 +1,413 @@
+[33mcommit 0d254d91b34003ab11e99f4bad994f92eba1a84b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 42880f8 7315932
+Author: kostasi12 <95173560+kostasi12@users.noreply.github.com>
+Date:   Fri Jan 12 17:22:00 2024 +0200
+
+    Merge pull request #16 from lukuenya/kostasi12-patch-1
+    
+    Update request.test.js
+
+[33mcommit 73159321612f9c718835269558535f2f778d9553[m
+Author: kostasi12 <95173560+kostasi12@users.noreply.github.com>
+Date:   Fri Jan 12 17:20:44 2024 +0200
+
+    Update request.test.js
+
+[33mcommit 42880f8aad47d07e8a13235ddc5b5b2d969fc199[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Jan 12 01:32:52 2024 +0200
+
+    Resolving McCabe Cycl. Complexity
+
+[33mcommit 3f30cb6aca90c0ad74caf45fa71ed098f82173ea[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Jan 12 01:24:03 2024 +0200
+
+    delete a duplicate comment
+
+[33mcommit 15f4a7fd0f126726f9f98e9489745f929a69d43b[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Jan 12 01:07:19 2024 +0200
+
+    add comments
+
+[33mcommit 74140b914a27590db1bd02335fccd1bd4c25227a[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Jan 12 00:01:54 2024 +0200
+
+    Reduce number of import
+
+[33mcommit f319c286a07d900279dc40a9668211cbb664d861[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Sat Dec 23 00:07:16 2023 +0200
+
+    post profile
+
+[33mcommit 602457540a1f2e3181ad16410c4466dcdda32708[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Sat Dec 23 00:04:38 2023 +0200
+
+    announcement
+
+[33mcommit ef38aefaf36862fdb6bdee6c4966e4b1f31466f3[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Sat Dec 23 00:00:21 2023 +0200
+
+    test
+
+[33mcommit d7cdd506642357b6184038895d7e4a764c22de08[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Dec 22 23:13:16 2023 +0200
+
+    Create request.test.js
+
+[33mcommit ab5528680d36adf546dc44287b9c6667e74ce015[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Dec 22 23:11:48 2023 +0200
+
+    Create profile.test.js
+
+[33mcommit 38e8ed11f2c44a24ec604f4d70a5634bf15078d2[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Dec 22 23:10:32 2023 +0200
+
+    Create announcement.test.js
+
+[33mcommit 4a27b43edabfe375b88cc84076f0c14a73e9dcfe[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 23:20:43 2023 +0200
+
+    update cd
+
+[33mcommit b150375713d559a82de630331c49b284663e8ddc[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 01:45:07 2023 +0200
+
+    Tired of this shit
+
+[33mcommit 34720008d3190e299c6687a781bf124252278f8b[m
+Merge: 3a5d6e7 dad7791
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Dec 19 01:39:02 2023 +0200
+
+    Merge pull request #13 from lukuenya/matt
+    
+    able to merge
+
+[33mcommit dad77911d36b5ebdfa169296bb0532c1d54e9283[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Dec 19 01:33:57 2023 +0200
+
+    Update ci_cd.yml
+
+[33mcommit 3a5d6e7dfa7ac6959a8f2717b41495af6d21deb0[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Dec 19 01:30:56 2023 +0200
+
+    Update main.yml
+
+[33mcommit 34aeff59965c125c72323b0b7c29342ab1f1609f[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 01:27:31 2023 +0200
+
+    workflows
+
+[33mcommit ca23c37d8e8d0f49eeb92cb5adca36ce7a354503[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 01:12:07 2023 +0200
+
+    delete ci_cd.yml
+
+[33mcommit 71a9f1840026d5865782ec9ce8526eda8af393a9[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Dec 19 01:08:23 2023 +0200
+
+    Create main.yml
+
+[33mcommit 280cfb775b1f3dc6ecfceda6a1c5154eed5c1b8a[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 01:04:29 2023 +0200
+
+    coverage
+
+[33mcommit ca649b7f2cf51749bc591f259cd0af7b2b5031e4[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 01:00:33 2023 +0200
+
+    delete mail.yml
+
+[33mcommit 6b28f63c2a26df9721855165a9a14452e7fdf6d4[m
+Merge: 3f938ea 53427bf
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 00:59:25 2023 +0200
+
+    Merge branch 'master' of https://github.com/lukuenya/Software_Eng_2_project_team25
+
+[33mcommit 3f938eaf4b1c547f1884d5af7f73ca166332117b[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 00:59:15 2023 +0200
+
+    workflow
+
+[33mcommit 53427bf6c5912cba4cb444e39124eecabe30bee1[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Dec 19 00:57:37 2023 +0200
+
+    Create ci_cd.yml
+
+[33mcommit 9a9fb4706585ea0dfce325207b38410a05bb3b4d[m
+Merge: 7cfbf99 6f3f5a1
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Dec 19 00:53:26 2023 +0200
+
+    Merge branch 'matt'
+
+[33mcommit 6f3f5a10d0ade5e4e6360b5bd9c4766bc234bc2c[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Mon Dec 18 23:16:45 2023 +0200
+
+    test and github workflow
+
+[33mcommit cd11d4e172e94bbdc474ec65afc0079afc9680c0[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Thu Dec 14 14:21:28 2023 +0200
+
+    unit.test.js
+
+[33mcommit f7895143112d2d940c68aa9d90cb811d1c6dcc6e[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Thu Dec 14 12:04:48 2023 +0200
+
+    add res exemples
+
+[33mcommit 0d8fd10b8d436ffd3cc7109039693fe7299ec37a[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Dec 13 20:59:03 2023 +0200
+
+    change of service id
+
+[33mcommit eb5cc8d75a3da493762552260e70b9c90ec568a2[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Thu Dec 7 00:51:01 2023 +0200
+
+    test get announcement
+
+[33mcommit 85415f59ee081406bf00aa7b3c4eddf080833ba5[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Dec 6 22:58:59 2023 +0200
+
+    First unit tests
+
+[33mcommit 7cfbf99d5760d0c36cc7783833e6ced20ba25766[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Nov 24 13:04:24 2023 +0200
+
+    Delete .github/workflow directory
+
+[33mcommit 31107c314433b7af8d679e7049945c2cd409fb30[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Nov 24 12:50:39 2023 +0200
+
+    Create main.yml
+
+[33mcommit bf349effcfae240f1ec9c7e65b3c89a88d2ff7cd[m
+Merge: 4f82899 aa79b8b
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Nov 15 00:52:56 2023 +0200
+
+    Merge branch 'matt' of https://github.com/lukuenya/Software_Eng_2_project_team25 into matt
+
+[33mcommit 4f82899f11be4a73c8ae4773a01eaf94a44b4568[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Nov 15 00:52:37 2023 +0200
+
+    modifying gitignore
+
+[33mcommit aa79b8b59fe62096caff73c3a896db30ee69bed8[m
+Merge: ecf45a9 cbf4401
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 22:39:41 2023 +0200
+
+    Merge pull request #11 from lukuenya/master
+    
+    Merge pull request #10 from lukuenya/matt
+
+[33mcommit cbf4401d52559c166f47e201829a4258ce77c2df[m
+Merge: aace862 ecf45a9
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 22:38:39 2023 +0200
+
+    Merge pull request #10 from lukuenya/matt
+    
+    add index.html
+
+[33mcommit ecf45a970e4410dab9db69c598e9703e64de9537[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Nov 14 22:36:07 2023 +0200
+
+    Add index.html
+
+[33mcommit a116696cb2d8fef5cee9813efd6279c4bad9b951[m
+Merge: b6130b6 aace862
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 21:14:54 2023 +0200
+
+    Merge pull request #9 from lukuenya/master
+    
+    route handler
+
+[33mcommit aace8620965c0246a0317800069f6246587c8a2e[m
+Merge: fbe9d87 b6130b6
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 20:57:14 2023 +0200
+
+    Merge pull request #8 from lukuenya/matt
+    
+    route handler
+
+[33mcommit b6130b6f0d09004cdec376d5c0e91b67cd922f6b[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Nov 14 20:56:28 2023 +0200
+
+    route handler
+
+[33mcommit fbe9d873b945c349761b0d8910e2fdc038a087e8[m
+Merge: 00b2d89 3b5b54e
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 20:08:21 2023 +0200
+
+    Merge pull request #7 from lukuenya/matt
+    
+    add railway_token
+
+[33mcommit 3b5b54e803c0c354809a44a411602cd3fdbc3977[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Nov 14 20:07:22 2023 +0200
+
+    railway_token
+
+[33mcommit 8de44254f9decd762edecab5512abf55bbaede2d[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Nov 14 13:03:34 2023 +0200
+
+    ci/cd
+
+[33mcommit 00b2d89098dd191e4bf1bdc4d03828cc90ef9250[m
+Merge: b73ff31 34790a8
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 12:58:55 2023 +0200
+
+    Merge pull request #6 from lukuenya/matt
+    
+    Matt
+
+[33mcommit 34790a82b62c75f65d6cd6583ece317aaa532a02[m
+Merge: 40afa10 b73ff31
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Tue Nov 14 12:50:53 2023 +0200
+
+    Merge pull request #5 from lukuenya/master
+    
+    test
+
+[33mcommit 40afa10238761371e061a4565d64a9b3acc63f63[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Tue Nov 14 12:48:25 2023 +0200
+
+    uml
+
+[33mcommit b73ff31850ba4497a40a2d6bc78042903cb50197[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Nov 3 12:34:28 2023 +0200
+
+    Create ci_cd.yml
+
+[33mcommit 54049c8dfbae29d7ccb151f8425f627cde256bd2[m
+Merge: ee7dda7 e171217
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Fri Nov 3 12:09:30 2023 +0200
+
+    Merge pull request #4 from lukuenya/matt
+    
+    Delete Frontend Folder
+
+[33mcommit e171217459183f91ecbf30690d6a6c72999ac414[m
+Merge: 06b0852 f6558d2
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Nov 3 12:02:04 2023 +0200
+
+    Merge branch 'matt' of https://github.com/lukuenya/Software_Eng_2_project_team25 into matt
+
+[33mcommit 06b0852fede29a8b20d38d9fb5c7842415fda696[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Fri Nov 3 11:59:30 2023 +0200
+
+    Deleting the Frontend Folder
+
+[33mcommit ee7dda75d596b1139497bfc6696c46a063473ec0[m
+Merge: d330ba5 f6558d2
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 20:03:06 2023 +0200
+
+    Merge pull request #3 from lukuenya/matt
+    
+    Readme Update
+
+[33mcommit f6558d2452fa1efbae192246224e7567d5135296[m
+Merge: 8d58d40 d330ba5
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 20:02:50 2023 +0200
+
+    Merge branch 'master' into matt
+
+[33mcommit 8d58d4080ed8a71ea70a55ebb7a30242b445d03c[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Nov 1 19:55:54 2023 +0200
+
+    Readme Update
+
+[33mcommit d330ba57d13804c682d61ec8e8c241090eb040c1[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 19:29:56 2023 +0200
+
+    Update README.md
+
+[33mcommit 56492fa6619f2dfd2460d80d7a1fa6f286ad065b[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 19:29:35 2023 +0200
+
+    Update README.md
+
+[33mcommit 3a26d2003c17458f3f9c049a2ca2eb68a6a2ced6[m
+Merge: bdb67d6 8818edf
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 19:26:59 2023 +0200
+
+    Merge pull request #2 from lukuenya/matt
+    
+    Dowload the Server/Client code from swagger
+
+[33mcommit 8818edf3a413a906dbaf481730f4bd065b33f329[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Nov 1 19:24:14 2023 +0200
+
+    Dowload the Server/Client code from swagger
+
+[33mcommit bdb67d66b055f9bb4a42565af525023987688cc8[m
+Merge: a06871a 1741bd1
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 13:59:10 2023 +0200
+
+    Merge pull request #1 from lukuenya/matt
+
+[33mcommit 1741bd1d6304335a0d42aacbf42a602f6844a95b[m
+Author: lukuenya <matthieundumbi@gmail.com>
+Date:   Wed Nov 1 13:57:24 2023 +0200
+
+    First commit
+
+[33mcommit a06871ab5bce8ed1ab1aca175462a4ffa52b3f97[m
+Author: Matthieu Ndumbi Lukuenya <46133049+lukuenya@users.noreply.github.com>
+Date:   Wed Nov 1 13:28:36 2023 +0200
+
+    Initial commit
