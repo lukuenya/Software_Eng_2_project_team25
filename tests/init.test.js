@@ -1,4 +1,4 @@
-const http = require('http');
+const { createServer } = require('http');
 const test = require('ava');
 const listen = require('test-listen');
 const got = require('got');
