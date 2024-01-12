@@ -52,18 +52,9 @@
 
 exports.addUser = function(body) {
   return new Promise(function(resolve, reject) {
-    if (!body) {
-      reject("Error 200, body is not given");   //if body is not given
-    } else {
-      resolve("User added successful");   //if parameter is given
-    }
-    var examples = {};
-    examples['application/json'] = [{
-      "userid" : 1,
-      "username" : "username",
-      "password" : "password",}];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    // Example validation: check if username and password are provided
+    if (!body.username || !body.password) {
+      reject({ error: "Username or password is missing" });
     } else {
       // If validation passes, resolve with the user object
       resolve({ "username": body.username, "password": body.password });
