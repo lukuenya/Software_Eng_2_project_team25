@@ -1,12 +1,15 @@
+// Constructor function for creating ResponsePayload objects
 var ResponsePayload = function (code, payload) {
   this.code = code;
   this.payload = payload;
 };
 
+// Function to create and return a ResponsePayload object
 exports.respondWithCode = function (code, payload) {
   return new ResponsePayload(code, payload);
 };
 
+// Function to set the HTTP response code based on provided arguments
 var setResponseCode = function (arg1, arg2) {
   if (arg2 && Number.isInteger(arg2)) {
     return arg2;
@@ -17,6 +20,7 @@ var setResponseCode = function (arg1, arg2) {
   return 200;
 };
 
+// Function to set the response body based on provided arguments
 var setResponseBody = function (arg1, arg2) {
   if (arg2 && !(arg2 instanceof ResponsePayload)) {
     return arg2;
@@ -25,6 +29,7 @@ var setResponseBody = function (arg1, arg2) {
   }
 };
 
+// Function to write a JSON response to the provided response object
 exports.writeJson = function (response, arg1, arg2) {
   var code = setResponseCode(arg1, arg2);
   var payload = setResponseBody(arg1, arg2);
